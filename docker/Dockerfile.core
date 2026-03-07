@@ -1,0 +1,21 @@
+FROM mambaorg/micromamba:1.5.8
+
+USER root
+
+RUN micromamba install -y -n base -c conda-forge -c bioconda \
+    fastp \
+    spades \
+    fastqc \
+    multiqc \
+    ncbi-amrfinderplus \
+    curl \
+    hmmer \
+    mlst \
+    bwa \
+    samtools \
+    bcftools \
+    snp-sites \
+    iqtree \
+    && micromamba clean --all --yes
+
+ENV PATH=/opt/conda/bin:$PATH

@@ -1,0 +1,98 @@
+# Snakemake
+.snakemake/
+snakemake.log
+
+test_data/example_mtb/
+*.fastq.gz
+
+# Results
+results/
+results/*
+results_example/*
+
+# Conda environments
+.envs/
+conda/
+*.conda
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+
+# User configuration
+config/config.yaml
+
+# Large databases
+data/bakta_db/
+amr_db/
+data/plasmid_db/
+
+# FASTQ input data (optional large datasets)
+data/fastq/
+
+# Docker build artifacts
+*.tar
+
+# Apptainer / Singularity images
+*.sif
+*.img
+
+# Logs
+logs/
+*.log
+
+# Snakemake working directory
+.snakemake/
+
+# Pipeline outputs
+results/
+results/*
+!results_example/
+
+# Local configuration
+config/config.yaml
+
+# Conda environments
+conda/
+.env/
+.envs/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Large databases
+data/
+amr_db/
+bakta_db/
+plasmid_db/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+
+.snakemake/
+results/
+logs/
+*.log
+*.tmp
+*.bam
+*.bai
+*.vcf
+*.vcf.gz
+
+data/fastq/
+data/bakta_db/
+amr_db/
+
+# Mac system files
+.DS_Store

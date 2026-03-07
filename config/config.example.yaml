@@ -1,0 +1,35 @@
+# Example configuration for MTB WGS Snakemake pipeline
+
+# Location of input FASTQ files
+fastq_dir: test_data/example_mtb
+
+# FASTQ naming convention
+r1_token: "_1"
+r2_token: "_2"
+fastq_ext: ".fastq.gz"
+
+# Output directory
+outdir: results
+
+# SNP analysis configuration
+snp:
+  reference_fasta: resources/refs/h37rv.fasta
+  outdir: results/mtb/snp
+
+# AMRFinder database location
+amr:
+  db_dir: amr_db
+
+# Bakta annotation database
+bakta:
+  db: data/bakta_db/db-light
+  genus: Mycobacterium
+  species: tuberculosis
+
+# Optional modules
+modules:
+  snp_qc: true
+  mlst: true
+  amr: true
+  annotation: true
+  miru: false

@@ -1,0 +1,8 @@
+cat > envs/bakta.yaml <<'YAML'
+name: bakta
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - bakta
+YAML
