@@ -96,3 +96,8 @@ amr_db/
 
 # Mac system files
 .DS_Store
+
+test_data/example_mtb/*.fastq.gz
+test_data/example_mtb/*.fastq
+results/
+.snakemake/
