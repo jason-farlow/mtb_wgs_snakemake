@@ -1,0 +1,83 @@
+# config.yaml
+
+outdir: results/mtb
+
+
+assembly:
+  assembler: spades
+  threads: 8
+  keep_tmp: false   # set true if you want to keep tmp outputs for debugging
+
+# where raw reads live
+fastq_dir: data/fastq/mtb_test
+
+# how to detect pairs in filenames (used by infer_samples in Snakefile)
+r1_token: "_1"
+r2_token: "_2"
+fastq_ext: ".fastq.gz"
+
+# optional: if you later want to drive samples explicitly
+# samples: data/samples.tsv
+
+tools:
+  fastp: fastp
+  bwa: bwa
+  spades: spades.py
+  samtools: samtools
+  bcftools: bcftools
+  tabix: tabix
+  snp_sites: snp-sites
+  iqtree: iqtree2
+  multiqc: multiqc
+
+
+fastp:
+  qualified_quality_phred: 20
+  length_required: 50
+  extra: ""
+
+snp:
+  reference_fasta: data/refs/mtb/H37Rv.fasta
+  outdir: results/mtb/snp
+  mincov: 10
+  minmapq: 30
+  minbaseq: 20
+  bcftools_threads: 4
+
+iqtree:
+  threads: 8
+  model: "GTR+G"
+  bootstrap: 1000
+
+modules:
+  snp_qc: true
+  amr: true
+  annotation: true
+  mlst: false
+  abricate: false
+  cgmlst: false
+  plasmids: false
+
+modules:
+  amr: true
+
+amr:
+  tool: amrfinder
+  db_dir: data/bakta_db/db-light/amrfinderplus-db/latest
+
+modules:
+  amr: true
+amr:
+  db_dir: data/bakta_db/db-light/amrfinderplus-db/latest
+
+modules:
+  amr: true
+  annotation: true
+
+amr:
+  db_dir: data/bakta_db/db-light/amrfinderplus-db/latest
+
+bakta:
+  db: data/bakta_db/db-light
+  genus: Mycobacterium
+  species: tuberculosis
