@@ -1,7 +1,44 @@
 MTB WGS Snakemake Pipeline
 Mycobacterium tuberculosis Whole Genome Sequencing Analysis Workflow
 
-Overview
+## Quick start
+
+Clone the repository:
+
+```bash
+git clone https://github.com/jason-farlow/mtb_wgs_snakemake.git
+cd mtb_wgs_snakemake
+
+Create a local configuration file:
+
+```bash
+cp config/config.example.yaml config/config.yaml
+```
+
+Place paired-end FASTQ files in:
+
+```
+test_data/example_mtb/
+```
+
+Expected naming pattern:
+
+```
+SAMPLE_1.fastq.gz
+SAMPLE_2.fastq.gz
+```
+
+Run the pipeline:
+
+```bash
+snakemake --use-conda --cores 4
+```
+
+Note: Large FASTQ test files are not included in the GitHub repository.  
+Users must provide their own sequencing data in `test_data/example_mtb/`.
+
+
+Overview of Analysis
 
 This repository contains a reproducible workflow for analysis of Mycobacterium tuberculosis whole genome sequencing data. The pipeline is implemented using Snakemake and containerized bioinformatics tools so that it can run reproducibly on local workstations, HPC clusters, and cloud compute environments such as AWS.
 

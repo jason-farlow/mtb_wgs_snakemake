@@ -30,6 +30,19 @@ bakta:
   miru:
     repo_dir: /path/to/MIRUReader
 
+
+assembly:
+  assembler: spades
+  threads: 4
+  extra: ""
+
+snp:
+  reference_fasta: resources/refs/h37rv.fasta
+  outdir: results/mtb/snp
+
+miru:
+  repo_dir: "resources/MIRUReader"
+
 # Optional modules
 modules:
   snp_qc: true
@@ -37,3 +50,19 @@ modules:
   amr: false
   annotation: false
   miru: false
+  mlst: fasle
+  amr: false
+  annotation: false
+  miru: false
+
+tools:
+  fastp: fastp
+  bwa: bwa
+  spades: spades.py
+  samtools: samtools
+  bcftools: bcftools
+  tabix: tabix
+  snp_sites: snp-sites
+  iqtree: iqtree2
+  multiqc: multiqc
+
