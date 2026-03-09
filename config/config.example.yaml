@@ -44,13 +44,10 @@ miru:
   repo_dir: "resources/MIRUReader"
 
 # Optional modules
+
 modules:
   snp_qc: true
   mlst: false
-  amr: false
-  annotation: false
-  miru: false
-  mlst: fasle
   amr: false
   annotation: false
   miru: false
