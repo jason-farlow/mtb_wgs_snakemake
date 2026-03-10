@@ -50,7 +50,7 @@ modules:
   mlst: false
   amr: false
   annotation: false
-  miru: false
+  miru: true
 
 tools:
   fastp: fastp
