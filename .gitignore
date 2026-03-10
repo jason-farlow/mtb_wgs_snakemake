@@ -101,3 +101,10 @@ test_data/example_mtb/*.fastq.gz
 test_data/example_mtb/*.fastq
 results/
 .snakemake/
+
+resources/refs/h37rv.fasta.amb
+resources/refs/h37rv.fasta.ann
+resources/refs/h37rv.fasta.bwt
+resources/refs/h37rv.fasta.fai
+resources/refs/h37rv.fasta.pac
+resources/refs/h37rv.fasta.sa
