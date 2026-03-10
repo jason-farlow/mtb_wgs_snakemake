@@ -51,19 +51,13 @@ Currently **stable and supported modules**:
 - Whole genome (wg)SNP tree for phylogenetic reconstruction (IQ-TREE, newick-formatted ML phylogeny)
 - MIRU-VNTR allele calling for lineage identification
 
-
 Overview of Analysis
 
-This repository contains a workflow for analysis of Mycobacterium tuberculosis short and long read genome sequence data. The pipeline is implemented using Snakemake and is containerized for running on local workstations, HPC clusters, and cloud compute environments.
+This repository accepts short read genome sequence data and is implemented using Snakemake. It is containerized for running on local workstations, HPC clusters, and cloud compute environments.
 
-The workflow performs read preprocessing/QC, de novo and mapped genome assembly, variant analysis, whole genome SNP based phylogenetic analysis, and MIRU-VNTR allele calling. Antimicrobial resistance detection and genome annotation will be added to future distributions. 
+The workflow performs read preprocessing/QC, de novo and mapped genome assembly, variant analysis, whole genome SNP based phylogenetic analysis, and MIRU-VNTR allele calling. Output files include contigs.fasta files, .vcf files, a ML phylogeny in .nwk format, adn MIRU based genotyping allele profiles for each isolate  generated as.txt files. 
 
-The MTB WGS Snakemake pipeline processes paired-end FASTQ files through read trimming (fastp), genome assembly (SPAdes), sequencing and assembly QC (FastQC, MultiQC), reference-based SNP analysis (BWA or minimap2, samtools, bcftools), and phylogenetic reconstruction (IQ-TREE). Optional tools will enable AMRFinderPlus and Bakta for antimicrobial resistance detection and genome annotation, respectively.
-
-
-MIRU Typing
-
-Variable number tandem repeat typing is carried out using MIRUReader. Traditional MIRU based genotyping allele profiles for each isolate are generated as .txt files.
+Incorporating long read data (ONT), antimicrobial resistance detection (AMRFinderPlus) and genome annotation (Bakta) will be added to future distributions. 
 
 ⚠️ **Modules currently under development and not yet part of the stable release:**
 
