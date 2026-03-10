@@ -47,18 +47,18 @@ Currently **stable and supported modules**:
 - Read QC and trimming (fastp / FastQC)
 - Genome assembly (SPAdes)
 - Reference mapping and SNP calling (BWA + bcftools)
-- Core SNP alignment
-- Phylogenetic reconstruction (IQ-TREE)
+- Core SNP alignment and variant analysis
+- Whole genome (wg)SNP tree for phylogenetic reconstruction (IQ-TREE)
+- MIRU-VNTR allele calling for lineage identification
 
 
 Overview of Analysis
 
-This repository contains a reproducible workflow for analysis of Mycobacterium tuberculosis whole genome sequencing data. The pipeline is implemented using Snakemake and containerized bioinformatics tools so that it can run reproducibly on local workstations, HPC clusters, and cloud compute environments such as AWS.
+This repository contains a reproducible workflow for analysis of Mycobacterium tuberculosis short and long read genome sequence data. The pipeline is implemented using Snakemake and is containerized for running on local workstations, HPC clusters, and cloud compute environments such as AWS.
 
-The workflow performs read preprocessing, genome assembly, SNP based phylogenetic analysis, antimicrobial resistance detection, genome annotation, and quality control reporting.
+The workflow performs read preprocessing/QC, de novo and mapped genome assembly, variant analysis, whoel genome SNP based phylogenetic analysis, and MIRU-VNTR allele calling. Antimicrobial resistance detection and genome annotation will be added to future distributions. 
 
-
-The MTB WGS Snakemake pipeline processes paired-end FASTQ files through read trimming (fastp), genome assembly (SPAdes), sequencing and assembly QC (FastQC, MultiQC), reference-based SNP analysis (BWA or minimap2, samtools, bcftools), phylogenetic reconstruction (IQ-TREE), antimicrobial resistance detection (AMRFinderPlus), optional genome annotation (Bakta), and optional MIRU typing (MIRUReader).
+The MTB WGS Snakemake pipeline processes paired-end FASTQ files through read trimming (fastp), genome assembly (SPAdes), sequencing and assembly QC (FastQC, MultiQC), reference-based SNP analysis (BWA or minimap2, samtools, bcftools), and phylogenetic reconstruction (IQ-TREE). Optional tools will incldue AMRFinderPlus and Bakta for antimicrobial resistance detection and genome annotation, respectively.
 
 
 Pipeline Steps
@@ -102,12 +102,17 @@ IQ TREE performs maximum likelihood phylogenetic inference using the SNP alignme
 
 Output from this step is a maximum likelihood phylogenetic tree in Newick format.
 
+MIRU Typing
+
+Variable number tandem repeat typing can be performed using MIRUReader.
+This provides traditional MIRU based genotyping profiles for each isolate.
+
+Output from this step is a MIRU typing profile for each isolate.
 
 
 ⚠️ **Modules currently under development and not yet part of the stable release:**
 
 - AMR detection
-- MIRU-VNTR allele calling
 - Genome annotation
 - MLST / cgMLST
 - Plasmid detection
@@ -115,7 +120,6 @@ Output from this step is a maximum likelihood phylogenetic tree in Newick format
 These modules exist in the repository but are **disabled by default in the configuration** and may change as development continues.
 
 Users interested in these features should consider them **experimental** until the next release. Pleasde see descriptions below:
-
 
 
 Antimicrobial Resistance Detection
@@ -132,16 +136,9 @@ Bakta predicts coding sequences, proteins, and functional annotations for bacter
 
 Output from this step includes genome annotation files such as GFF files and protein FASTA files.
 
-MIRU Typing
-
-Variable number tandem repeat typing can be performed using MIRUReader.
-This provides traditional MIRU based genotyping profiles for each isolate.
-
-Output from this step is a MIRU typing profile for each isolate.
-
 Pipeline Outputs
 
-The pipeline generates several outputs including trimmed sequencing reads, genome assemblies, SNP variant calls, core SNP alignments, phylogenetic trees, antimicrobial resistance profiles, genome annotations, and quality control reports.
+The pipeline generates several outputs including trimmed sequencing reads, quality control reports, genome assemblies, SNP variant calls, SNP alignments, phylogenetic trees, and MIRU-VNTR allele calls.
 
 Workflow Features
 
