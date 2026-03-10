@@ -57,7 +57,7 @@ This repository accepts short read genome sequence data and is implemented using
 
 The workflow performs read preprocessing/QC, de novo and mapped genome assembly, variant analysis, whole genome SNP based phylogenetic analysis, and MIRU-VNTR allele calling. Output files include contigs.fasta files, .vcf files, a ML phylogeny in .nwk format, adn MIRU based genotyping allele profiles for each isolate  generated as.txt files. 
 
-Incorporating long read data (ONT), antimicrobial resistance detection (AMRFinderPlus) and genome annotation (Bakta) will be added to future distributions. 
+Incorporating long read data (ONT), antimicrobial resistance detection (AMRFinderPlus),  genome annotation (Bakta), and MLST/cgMLST will be added to future distributions. 
 
 ⚠️ **Modules currently under development and not yet part of the stable release:**
 
@@ -67,7 +67,10 @@ Incorporating long read data (ONT), antimicrobial resistance detection (AMRFinde
 
 These modules exist in the repository but are **disabled by default in the configuration** and may change as development continues.
 
-Users interested in these features should consider them **experimental** until the next release. Pleasde see descriptions below:
+Users interested in these features should consider them **experimental** until the next release. 
+
+Pleasde see descriptions below:
+
 Input Requirements
 
 Users must provide their own sequencing data in `test_data/example_mtb/` as stated above. The pipeline expects paired end FASTQ sequencing files using the naming convention sampleID underscore 1 fastq.gz (ID_R1,fastq.gz) and sampleID underscore 2 fastq.gz (ID_R2,fastq.gz). The reference genome used for SNP analysis is the Mycobacterium tuberculosis H37Rv reference genome.
