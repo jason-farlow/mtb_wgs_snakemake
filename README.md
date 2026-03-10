@@ -38,6 +38,19 @@ Note: Large FASTQ test files are not included in the GitHub repository.
 Users must provide their own sequencing data in `test_data/example_mtb/`.
 
 
+## Pipeline status
+
+This repository contains a reproducible Snakemake workflow for analysis of *Mycobacterium tuberculosis* whole-genome sequencing data.
+
+Currently **stable and supported modules**:
+
+- Read QC and trimming (fastp / FastQC)
+- Genome assembly (SPAdes)
+- Reference mapping and SNP calling (BWA + bcftools)
+- Core SNP alignment
+- Phylogenetic reconstruction (IQ-TREE)
+
+
 Overview of Analysis
 
 This repository contains a reproducible workflow for analysis of Mycobacterium tuberculosis whole genome sequencing data. The pipeline is implemented using Snakemake and containerized bioinformatics tools so that it can run reproducibly on local workstations, HPC clusters, and cloud compute environments such as AWS.
@@ -88,6 +101,22 @@ Phylogenetic relationships between isolates are inferred using IQ TREE.
 IQ TREE performs maximum likelihood phylogenetic inference using the SNP alignment.
 
 Output from this step is a maximum likelihood phylogenetic tree in Newick format.
+
+
+
+⚠️ **Modules currently under development and not yet part of the stable release:**
+
+- AMR detection
+- MIRU-VNTR allele calling
+- Genome annotation
+- MLST / cgMLST
+- Plasmid detection
+
+These modules exist in the repository but are **disabled by default in the configuration** and may change as development continues.
+
+Users interested in these features should consider them **experimental** until the next release. Pleasde see descriptions below:
+
+
 
 Antimicrobial Resistance Detection
 
