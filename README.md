@@ -57,7 +57,7 @@ This repository accepts short read genome sequence data and is implemented using
 
 The workflow performs read preprocessing/QC, de novo and mapped genome assembly, variant analysis, whole genome SNP based phylogenetic analysis, and MIRU-VNTR allele calling. Output files include contigs.fasta files, .vcf files, a ML phylogeny in .nwk format, and MIRU based genotyping allele profiles for each isolate  generated as.txt files. 
 
-Incorporating long read data (ONT), antimicrobial resistance detection (AMRFinderPlus),  genome annotation (Bakta), and MLST/cgMLST will be added to future distributions. 
+Incorporating long read data (ONT), antimicrobial resistance detection (AMRFinderPlus),  genome annotation (Bakta), MLST/cgMLST, and additkional SNP filters will be added to future distributions. 
 
 ⚠️ **Modules currently under development and not yet part of the stable release:**
 
