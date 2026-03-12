@@ -55,7 +55,7 @@ Overview of Analysis
 
 This repository accepts short read genome sequence data and is implemented using Snakemake. It is containerized for running on local workstations, HPC clusters, and cloud compute environments.
 
-The workflow performs read preprocessing/QC, de novo and mapped genome assembly, variant analysis, whole genome SNP based phylogenetic analysis, and MIRU-VNTR allele calling. Output files include contigs.fasta files, .vcf files, a ML phylogeny in .nwk format, adn MIRU based genotyping allele profiles for each isolate  generated as.txt files. 
+The workflow performs read preprocessing/QC, de novo and mapped genome assembly, variant analysis, whole genome SNP based phylogenetic analysis, and MIRU-VNTR allele calling. Output files include contigs.fasta files, .vcf files, a ML phylogeny in .nwk format, and MIRU based genotyping allele profiles for each isolate  generated as.txt files. 
 
 Incorporating long read data (ONT), antimicrobial resistance detection (AMRFinderPlus),  genome annotation (Bakta), and MLST/cgMLST will be added to future distributions. 
 
@@ -69,7 +69,7 @@ These modules exist in the repository but are **disabled by default in the confi
 
 Users interested in these features should consider them **experimental** until the next release. 
 
-Pleasde see descriptions below:
+Please see descriptions below:
 
 Input Requirements
 
