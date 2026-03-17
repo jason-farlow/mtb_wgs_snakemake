@@ -1,6 +1,6 @@
-MTB WGS Snakemake Pipeline
+MTB wgSNP Snakemake Pipeline
 
-Mycobacterium tuberculosis Whole Genome Sequencing Analysis Workflow
+Mycobacterium tuberculosis Whole Genome SNP Analysis Workflow
 
 ## Quick start
 
